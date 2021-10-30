@@ -10,6 +10,8 @@ import Login from './Component/Login/Login';
 import AuthProvider from './Context/AuthProvider';
 import Aboutus from './Component/Aboutus/Aboutus';
 import Notfound from './Component/Notfound/Notfound';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
+import SingleService from './Component/SingleService/SingleService';
 
 
 function App() {
@@ -28,6 +30,9 @@ function App() {
           <Route path="/aboutus">
           <Aboutus></Aboutus>
           </Route>
+           <PrivateRoute path="/singleService/:id">
+            <SingleService></SingleService>
+          </PrivateRoute>
            <Route path="/login">
             <Login></Login>
           </Route> 

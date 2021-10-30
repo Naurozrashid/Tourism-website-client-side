@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Choose from '../Choose/Choose';
 import Review from '../Review/Review';
+import Servicecard from '../Servicecard/Servicecard';
+
 import './Home.css'
 
 
 const Home = () => {
+    const [services, setServices] = useState([]);
+    
+    useEffect(() => {
+        fetch('https://blooming-citadel-47487.herokuapp.com/services')
+            .then(res => res.json())
+            .then(data => setServices(data));
+    }, []);
     return (
         <div>
             {/* banner part */}
+            {/* carosel */}
             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
   <div  className="carousel-inner">
     <div className="carousel-item py-5 cover active">
@@ -47,6 +58,66 @@ const Home = () => {
     <span className="visually-hidden">Next</span>
   </button>
 </div>
+
+
+
+          {/* service section */}
+          <div>
+
+          <h5 className="mt-5 text-orgarge text-center">Choose Your Package</h5>
+        <h1 className="text-center text-size">Select Your Best Package <br/> For Your Travel</h1>
+        <>
+
+            <div className="row g-4">
+                {
+                    services.map(service => <Servicecard
+                    
+                     key={service.img}
+                     service={service}
+                    
+                    ></Servicecard>
+
+                        //
+                    
+                    )
+                }
+            </div >
+
+        </ >
+
+          </div>
+
+
+         
+
+          {/* extra setion */}
+          <div className="extra-cover mt-5">
+               <h5 className="mt-5 text-orgarge text-center">Why Vacaday</h5>
+                <h1 className="text-center text-size">Why You Are Travel With Vacaday</h1>
+                <Choose></Choose>
+                
+               
+                {/* <div className=" d-flex align-items-center mb-5 mt-5">
+                    <div className=" con">
+                    <i className="fas fa-laptop size pb-4"></i>
+                    <h5>1000+ our <br/> worldwide guide</h5>
+                    </div>
+                    <div className="con ">
+                    <i className="fas fa-book size pb-4"></i>
+                    <h5>100% trusted travel <br/> agency</h5>
+                    </div>
+                    <div className="con ">
+                    <i className="fas fa-headphones size pb-4"></i>
+                    <h5>10+ year of travel <br/> experience</h5>
+                    </div>
+                    <div className="con">
+                    <i className="fas fa-comments size pb-4"></i>
+                    <h5>90% of our Happy <br/> Customer</h5>
+                    </div>
+
+                </div> */}
+                 
+          </div>
         
         
             {/* review part */}
