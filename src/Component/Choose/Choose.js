@@ -10,14 +10,14 @@ const Choose = () => {
                     <div className="d-flex flex-column flex-lg-row g-5 content">
                         <div className="col-lg-3 col-12 d-flex">
                             <div className="text-center ">
-                                <i class="fas fa-user icon"></i>
+                                <i className="fas fa-user icon"></i>
                                 <h1 className="text-followers fcolor">1000+</h1>
                                 <h4 className="text-followers fcolor">Our World Wide <br/>Guide</h4>
                             </div>
                         </div>
                         <div className="col-lg-3 col-12 d-flex">
                             <div className="text-center">
-                                <i class="fas fa-handshake icon"></i>
+                                <i className="fas fa-handshake icon"></i>
                                 <h1 className="text-followers fcolor">100%</h1>
                                 <h4 className="text-followers fcolor">Trusted Travel <br/> Agency</h4>
                             </div>

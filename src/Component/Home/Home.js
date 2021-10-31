@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Choose from '../Choose/Choose';
 import Review from '../Review/Review';
 import Servicecard from '../Servicecard/Servicecard';
+import {Spinner } from 'react-bootstrap';
 
 import './Home.css'
 
@@ -22,7 +23,7 @@ const Home = () => {
   <div  className="carousel-inner">
     <div className="carousel-item py-5 cover active">
       
-       <div class="text-center caption py-2 my-5">
+       <div className="text-center caption py-2 my-5">
         <div className=" my-5">
             <h3>Lets plan your best vacation</h3>
             <h5>Where Camping Adventures Begin</h5>
@@ -31,7 +32,7 @@ const Home = () => {
     </div>
     </div>
     <div className="carousel-item cover2 py-5">
-     <div class="text-center caption py-2 my-5">
+     <div className="text-center caption py-2 my-5">
         <div className=" my-5">
             <h3>Explore the world with us</h3>
             <h5>Where Your Adventures Begin</h5>
@@ -40,7 +41,7 @@ const Home = () => {
     </div>
     </div>
     <div className="carousel-item cover3 py-5">
-     <div class="text-center caption py-2  my-5">
+     <div className="text-center caption py-2  my-5">
         <div className=" my-5">
             <h3>Lets plan amazing tour</h3>
             <h5>Where Camping Adventures Begin</h5>
@@ -70,6 +71,10 @@ const Home = () => {
 
             <div className="row g-4">
                 {
+                    services.length===0 ? 
+              <div className="d-flex justify-content-center">
+                <Spinner animation="border" />
+              </div>:
                     services.map(service => <Servicecard
                     
                      key={service.img}

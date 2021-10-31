@@ -76,12 +76,12 @@ const useFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
         .then(result => {
           const user = result.user;
-         if(!user.emailVerified){
-             setError('Email is not verified');
-             logOut();
-             swal("Login Unsuccessful", `${error}`, "warning");
-             return
-         }
+        //  if(!user.emailVerified){
+        //      setError('Email is not verified');
+        //      logOut();
+        //      swal("Login Unsuccessful", `${error}`, "warning");
+        //      return
+        //  }
          
          swal("Login", "Successful", "success");
           history.push(redirect_uri);

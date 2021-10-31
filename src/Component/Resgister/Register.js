@@ -2,7 +2,7 @@ import React from 'react';
 import './Register.css'
 import { Link,useHistory } from 'react-router-dom';
 import { Form,Button } from 'react-bootstrap';
-import logo from '../../Images/login.jpg'
+import logo from '../../Images/freepik.jpg'
 import useAuth from '../../Hooks/useAuth';
 import swal from 'sweetalert';
 
@@ -27,9 +27,9 @@ const Register = () => {
           <div className="col-lg-5 image d-flex justify-content-center align-items-center">
             <div className="text-center text-dark p-4">
               <img src={logo} className="img-fluid" alt="" />
-              <h6 className="mt-5">Make Your Parking Booking Experience a Lot Brighter</h6>
+              <h6 className="mt-5">Make Your Travel Booking Experience a Lot Brighter</h6>
               <Form.Text className="text-muted">
-                with best facilitise best equipments and best parking, you are in safe hands.
+                with best facilitise best tour guide and best packages, you are in safe hands.
               </Form.Text>
             </div>
           </div>

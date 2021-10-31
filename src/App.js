@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -8,10 +8,13 @@ import Header from './Component/Header/Header';
 import Register from './Component/Resgister/Register';
 import Login from './Component/Login/Login';
 import AuthProvider from './Context/AuthProvider';
-import Aboutus from './Component/Aboutus/Aboutus';
 import Notfound from './Component/Notfound/Notfound';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 import SingleService from './Component/SingleService/SingleService';
+
+import Dashboard from './Component/Dashboard/Dashboard';
+import OrderFrom from './Component/OrderFrom/OrderFrom';
+import MyOrder from './Component/MyOrder/MyOrder';
 
 
 function App() {
@@ -27,11 +30,17 @@ function App() {
           <Route path="/home">
           <Home></Home>
           </Route>
-          <Route path="/aboutus">
-          <Aboutus></Aboutus>
-          </Route>
+          <PrivateRoute path="/Dashboard">
+         <Dashboard></Dashboard>
+          </PrivateRoute>
+          <PrivateRoute path="/MyOrder">
+         <MyOrder></MyOrder>
+          </PrivateRoute>
            <PrivateRoute path="/singleService/:id">
             <SingleService></SingleService>
+          </PrivateRoute>
+           <PrivateRoute path="/OrderFrom/:id">
+            <OrderFrom></OrderFrom>
           </PrivateRoute>
            <Route path="/login">
             <Login></Login>
