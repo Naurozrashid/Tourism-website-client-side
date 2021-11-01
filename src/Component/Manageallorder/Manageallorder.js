@@ -6,7 +6,7 @@ const Manageallorder = () => {
     const[orders,setOrders]=useState([]);
   const[isUpdate,setIsUpdate]=useState(null);
   useEffect(()=>{
-    fetch('http://localhost:5000/orders')
+    fetch('https://blooming-citadel-47487.herokuapp.com/orders')
     .then(res=>res.json())
     .then(data=>setOrders(data))
   },[isUpdate])
@@ -14,7 +14,7 @@ const Manageallorder = () => {
   const handleDeleteOrder= id =>{
     const proceed=window.confirm('Are you sure,you want to delete');
     if(proceed){
-      const url=`http://localhost:5000/orders/${id}`
+      const url=`https://blooming-citadel-47487.herokuapp.com/orders/${id}`
       fetch(url,{
           method:'DELETE',
  
@@ -32,7 +32,7 @@ const Manageallorder = () => {
  
   const handleUpdate = id =>{
  
-    const url=`http://localhost:5000/orders/${id}`
+    const url=`https://blooming-citadel-47487.herokuapp.com/orders/${id}`
     fetch(url)
     .then(res=>res.json())
     .then(data=>{
