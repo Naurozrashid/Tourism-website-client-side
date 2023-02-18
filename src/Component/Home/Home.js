@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 import Choose from '../Choose/Choose';
 import Review from '../Review/Review';
 import Servicecard from '../Servicecard/Servicecard';
-import {Spinner } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 
 import './Home.css'
 
 
 const Home = () => {
     const [services, setServices] = useState([]);
-    
+
     useEffect(() => {
-        fetch('https://blooming-citadel-47487.herokuapp.com/services')
+        fetch('https://tourism-website-server-side.onrender.com/services')
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);
@@ -20,88 +20,88 @@ const Home = () => {
             {/* banner part */}
             {/* carosel */}
             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-  <div  className="carousel-inner">
-    <div className="carousel-item py-5 cover active">
-      
-       <div className="text-center caption py-2 my-5">
-        <div className=" my-5">
-            <h3>Lets plan your best vacation</h3>
-            <h5>Where Camping Adventures Begin</h5>
-            <button className="btn brdr font-color5 my-5">Book Now</button>
-        </div>
-    </div>
-    </div>
-    <div className="carousel-item cover2 py-5">
-     <div className="text-center caption py-2 my-5">
-        <div className=" my-5">
-            <h3>Explore the world with us</h3>
-            <h5>Where Your Adventures Begin</h5>
-            <button className="btn brdr font-color5 my-5">Book Now</button>
-        </div>
-    </div>
-    </div>
-    <div className="carousel-item cover3 py-5">
-     <div className="text-center caption py-2  my-5">
-        <div className=" my-5">
-            <h3>Lets plan amazing tour</h3>
-            <h5>Where Camping Adventures Begin</h5>
-            <button className="btn brdr font-color5 my-5">Book Now</button>
-        </div>
-    </div>
-    </div>
-  </div>
-  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Previous</span>
-  </button>
-  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Next</span>
-  </button>
-</div>
+                <div className="carousel-inner">
+                    <div className="carousel-item py-5 cover active">
+
+                        <div className="text-center caption py-2 my-5">
+                            <div className=" my-5">
+                                <h3>Lets plan your best vacation</h3>
+                                <h5>Where Camping Adventures Begin</h5>
+                                <button className="btn brdr font-color5 my-5">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="carousel-item cover2 py-5">
+                        <div className="text-center caption py-2 my-5">
+                            <div className=" my-5">
+                                <h3>Explore the world with us</h3>
+                                <h5>Where Your Adventures Begin</h5>
+                                <button className="btn brdr font-color5 my-5">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="carousel-item cover3 py-5">
+                        <div className="text-center caption py-2  my-5">
+                            <div className=" my-5">
+                                <h3>Lets plan amazing tour</h3>
+                                <h5>Where Camping Adventures Begin</h5>
+                                <button className="btn brdr font-color5 my-5">Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Previous</span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Next</span>
+                </button>
+            </div>
 
 
 
-          {/* service section */}
-          <div>
+            {/* service section */}
+            <div>
 
-          <h5 className="mt-5 text-orgarge text-center">Choose Your Package</h5>
-        <h1 className="text-center text-size">Select Your Best Package <br/> For Your Travel</h1>
-        <>
+                <h5 className="mt-5 text-orgarge text-center">Choose Your Package</h5>
+                <h1 className="text-center text-size">Select Your Best Package <br /> For Your Travel</h1>
+                <>
 
-            <div className="row g-4">
-                {
-                    services.length===0 ? 
-              <div className="d-flex justify-content-center">
-                <Spinner animation="border" />
-              </div>:
-                    services.map(service => <Servicecard
-                    
-                     key={service.img}
-                     service={service}
-                    
-                    ></Servicecard>
+                    <div className="row g-4">
+                        {
+                            services.length === 0 ?
+                                <div className="d-flex justify-content-center">
+                                    <Spinner animation="border" />
+                                </div> :
+                                services.map(service => <Servicecard
 
-                        //
-                    
-                    )
-                }
-            </div >
+                                    key={service.img}
+                                    service={service}
 
-        </ >
+                                ></Servicecard>
 
-          </div>
+                                    //
+
+                                )
+                        }
+                    </div >
+
+                </ >
+
+            </div>
 
 
-         
 
-          {/* extra setion */}
-          <div className="extra-cover mt-5">
-               <h5 className="mt-5 text-orgarge text-center">Why Vacaday</h5>
+
+            {/* extra setion */}
+            <div className="extra-cover mt-5">
+                <h5 className="mt-5 text-orgarge text-center">Why Vacaday</h5>
                 <h1 className="text-center text-size">Why You Are Travel With Vacaday</h1>
                 <Choose></Choose>
-                
-               
+
+
                 {/* <div className=" d-flex align-items-center mb-5 mt-5">
                     <div className=" con">
                     <i className="fas fa-laptop size pb-4"></i>
@@ -121,15 +121,15 @@ const Home = () => {
                     </div>
 
                 </div> */}
-                 
-          </div>
-        
-        
+
+            </div>
+
+
             {/* review part */}
             <div className="container mt-5">
                 <h5 className="text-orgarge text-center">Our Traveller Say</h5>
-            <h3 className="text-center text-size">What Oue Traveller Say <br/> About Us</h3>
-            <Review></Review>
+                <h3 className="text-center text-size">What Oue Traveller Say <br /> About Us</h3>
+                <Review></Review>
             </div>
         </div>
 
